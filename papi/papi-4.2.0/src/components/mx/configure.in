@@ -1,0 +1,12 @@
+# Process this file with autoconf to produce a configure script.
+# File: components/net/configure.in
+# CVS: $Id: configure.in,v 1.3 2010/05/27 14:45:15 bsheely Exp $
+
+AC_INIT
+AC_PATH_PROG(MXPATH, mx_counters)
+if test "$MXPATH" = ""; then
+  AC_MSG_ERROR([Component requires the path to mx_counters])
+fi
+AC_SUBST(MXPATH)
+AC_CONFIG_FILES([Makefile.mx])
+AC_OUTPUT

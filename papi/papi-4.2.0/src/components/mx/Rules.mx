@@ -1,0 +1,10 @@
+# $Id: Rules.mx,v 1.2 2010/04/30 19:34:06 bsheely Exp $
+
+include components/mx/Makefile.mx
+
+COMPSRCS += components/mx/linux-mx.c 
+COMPOBJS += linux-mx.o
+CFLAGS += -DMXPATH=\"$(MXPATH)\"
+
+linux-mx.o: components/mx/linux-mx.c components/mx/linux-mx.h $(HEADERS)
+	$(CC) $(LIBCFLAGS) $(OPTFLAGS) -c components/mx/linux-mx.c -o linux-mx.o 

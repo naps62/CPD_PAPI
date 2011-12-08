@@ -1,0 +1,47 @@
+Fully characterize your own laptop:
+(sources: `dmidecode`, `lscpu`, `getconf -a | grep -i cache`, `lshw`,
+`/sys/devices/system/cpu/...`)
+
+CPU:
+	Manufacturer: Intel
+	Model: Core 2 Duo P8600
+	u-Architecture: Penryn-3M, 45nm, medium voltage
+	Clock: 2.4GHz
+	FSB: 1066MHz (Main Memory only runs at 800MHz (1.2ns) )
+	chip reference
+	cores: 2
+	peak FP performance
+		Theoretical: each core has 2 FP units, each can issue a new SIMD
+					instruction per clock cycle. each SIMD instruction can
+					carry 2 double precision floating point numbers, for a
+					total of 4 flops per cycle, for each core
+		
+					peak FP = #cores * flops/cycle * frequency
+							= 2		 * 4		   * 2.4*10^9
+							= 19 GFLOPS
+
+Cache details:
+	L1: One per core
+		32KB data / 32KB instructions
+		Synchronous
+		8-way Set-associative (64 sets, 8 lines each)
+		Line Size: 64B
+		synchronous internal write-back
+	L2: Shared
+		3MB
+		12-way Set-associative (4096 sets, 12 lines each)
+		Line Size: 64B
+		synchronous write-back unified
+		Error Correction Type: Single-bit ECC
+	L3: N/A
+
+Main Memory:
+	Bandwidth of memory access from the higher cache level on chip:
+		Theoretical: DDR2-800 / PC6400 -> 6.4GB/s
+			64 bit bus + 800MHz (400MHz real, double data rate) = 6.4GB/s
+			Dual Channel:
+				6.4 * 2 = 12.8 GB/s
+	Latency:
+			Later benchmark: 85-95 nscannot open file hpccinf.txt
+	Size: 4096MB
+

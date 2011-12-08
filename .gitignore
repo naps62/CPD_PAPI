@@ -1,0 +1,8 @@
+*.o
+*.aux
+*.pdf
+*.nav
+*.out
+*.toc
+*.vrb
+*.snm

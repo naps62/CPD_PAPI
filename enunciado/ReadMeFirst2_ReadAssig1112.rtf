@@ -1,0 +1,123 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf360
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18480\viewh19600\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\ql\qnatural\pardirnatural
+
+\f0\fs24 \cf0 \
+
+\b\fs30 MEI/PDC\
+Reading assignment in CSP\
+
+\fs24 \
+\
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\qj\pardirnatural
+
+\i\fs26 \cf0 Revised version
+\fs24  
+\b0 (2511/11)
+\b \
+
+\i0\b0 \
+Once you carefully read the supplied papers related to performance analysis and measurement of programs and computer systems, you are required now to perform some specific short tasks and to prepare a short presentation interpreting the obtained results.\
+\
+
+\b Task 1\
+
+\b0 \
+
+\b 1.1
+\b0  Fully characterize your own laptop: manufacturer, model, CPU chip manufacturer/model/reference, main memory latency and size; for the CPU give more details on #cores, peak FP performance; for the memory hierarchy present cache details and the bandwidth of memory access from the higher cache level on chip.\
+\
+
+\b 1.2
+\b0  Build the roofline model for your laptop and show in the same operational intensity graph your laptop model compared with the Opteron X4 (4 cores); follow the suggestions in Appendix A of the paper on Roofline.\
+Add more ceilings to your laptop roofline model as suggested in the paper.\
+\
+
+\b Task 2\
+
+\b0 \
+
+\b 2.1
+\b0  Install PAPI on your laptop and identify all performance counters that you have available on your laptop. From these select the most relevant ones to analyse an application execution time and identify potential bottlenecks.\
+\
+
+\b 2.2
+\b0  Consider the algorithm that has been assigned to you, that you will execute in a single core at your laptop. This algorithm should be somehow related to a data structure where the size has not been specified. \
+   
+\b 2.2.1
+\b0  Select the following sizes for your data structure(s): 2 that will fit in L1 cache, 2 only in L2 cache, 2 only in L3 cache (if available) and 2 only in RAM.\
+   
+\b 2.2.2
+\b0  Execute the algorithm at least 3 times for each data structure size, and select the best execution time that must be in a range no larger than 5% of the other 2 values.\
+   
+\b 2.2.3
+\b0  For the best execution times, and using PAPI data from the hardware counters, \
+      
+\b 2.2.3.1
+\b0  Estimate the number of memory accesses per instruction and confirm that value with PAPI readings\
+      
+\b 2.2.3.2
+\b0  Plot the following data: #instructions / byte_accessed_to_RAM; %miss rate on memory reads in cache levels 1 and 2\
+\
+
+\b 2.3
+\b0  Interpret the obtained results for the algorithms, starting with bound characterization (CPU bound or memory bandwidth bound) and then on performance bottlenecks.\
+\
+
+\b 2.4
+\b0  Write a short essay (no longer than 4 pages) on a specify topic related to this work and include a description of the experimental setup and relevant results (this may increase the size of the report up to 2 more pages). \
+This task can be performed by a 2-student team work, e.g., you may group in pairs to deliver a single report. Group as you please.\
+\
+
+\b Algorithm assignment\
+
+\b0 \
+This list is not definitive. You may swap the allocated algorithm with any colleague.\
+\
+
+\b 1. 
+\b0 For MEngInf students:\
+ - Andr\'e9: bubble sort\
+ - Daniel: DGEMM\
+ - Diogo: ray tracer\
+ - Filipe: heap sort\
+ - Gabriel: histogram\
+ - Hugo: merge sort\
+ - Leandro: radix sort\
+ - Marta: FFT\
+ - Miguel: n-body\
+ - PedroC: convolution\
+ - PedroS: counting sort\
+ - P\'e9ter: search in binary tree\
+ - Rafael: SpMV\
+ - Ricardo: quick sort\
+ - SamuelR: DAXPY\
+ - SamuelA: SGEMM\
+\
+
+\b 2.
+\b0  For PhD students: please select a relevant algorithm that might be relevant in your thesis and make a proposal to the lecturing team.\
+
+\i\b \
+\
+
+\fs26 Read_me_first
+\fs24  
+\b0 (11/11/11)\
+
+\i0 \
+The main goal of this reading assignment is to develop in students \ul transversal skills\ulnone  applied to a specific topic in the module 
+\i Computer Systems and Performance
+\i0 : the methodology on the characterization of the performance bottlenecks on each computing platform and on the code profiling and its performance analysis on that platform.\
+The development of these skills will be achieved through training in \ul literature search\ulnone , \ul reading & interpreting scientific papers\ulnone , \ul planning experimental work\ulnone , \ul synthesizing relevant information\ulnone , \ul writing a short essay\ulnone  on a given theme and a short (10 min) \ul oral communication and discussion\ulnone  of the results (on the 6th December).\
+\
+The starting material for this reading is a paper on the performance model known as Roofline, complemented with the Gustafson extension and with a revision of the Amdahl law applied to heterogeneous multicore computers. Everyone should read it and try to characterize its own laptop based on the supplied information on the paper.\
+The next step is related to get acquainted with one of the most popular portable interface (in the form of a library) to hardware performance counters on current processor architectures, PAPI, by reading one of the papers that address this approach.\
+\
+Later on we will supply the specification of the group and individual activities, through a revised edition of this document.\
+\
+Braga, 11/11/11 \
+\
+}

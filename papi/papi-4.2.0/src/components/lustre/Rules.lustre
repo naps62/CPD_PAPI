@@ -1,0 +1,7 @@
+# $Id: Rules.lustre,v 1.3 2010/06/17 20:53:50 jagode Exp $
+
+COMPSRCS += components/lustre/linux-lustre.c
+COMPOBJS += linux-lustre.o
+
+linux-lustre.o: components/lustre/linux-lustre.c components/lustre/linux-lustre.h $(HEADERS)
+	$(CC) $(LIBCFLAGS) $(OPTFLAGS) -c components/lustre/linux-lustre.c -o linux-lustre.o 

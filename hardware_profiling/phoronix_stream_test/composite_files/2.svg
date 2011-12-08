@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Phoronix Test Suite v3.6.0m2 (Arendal) [ http://www.phoronix-test-suite.com/ ]-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" font-family="sans-serif" viewbox="0 0 580 149" width="580" height="149">
+  <rect x="1" y="1" width="578" height="147" fill="#FEFEFE" stroke="#454545" stroke-width="1"/>
+  <line x1="201" y1="64" x2="201" y2="110" stroke="#454545" stroke-width="1"/>
+  <line x1="201" y1="110" x2="565" y2="110" stroke="#454545" stroke-width="1"/>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <text x="565" y="57" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">PHORONIX-TEST-SUITE.COM</text>
+  </a>
+  <polygon fill="#454545" stroke="#949494" stroke-width="1" points="210,56 201,60.5 201,51.5"/>
+  <text x="213" y="57" font-size="8" text-anchor="start" dominant-baseline="middle" fill="#454545">MB/s, More Is Better</text>
+  <rect x="0" y="0" width="580" height="48" fill="#2B6B29"/>
+  <a xlink:href="http://openbenchmarking.org/test/pts/stream-1.1.0" xlink:show="new">
+    <text x="5" y="12" font-size="18" text-anchor="start" dominant-baseline="middle" fill="#FEFEFE">Stream v2009-04-11</text>
+  </a>
+  <text x="5" y="33" font-size="12" text-anchor="start" dominant-baseline="middle" fill="#FEFEFE">Type: Scale</text>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <image x="488" y="3.2" width="77" height="40" xlink:href="http://www.phoronix-test-suite.com/external/pts-logo-77x40-white.png"/>
+  </a>
+  <line x1="201" y1="110" x2="201" y2="99" stroke="#454545" stroke-width="10" stroke-dasharray="1,45"/>
+  <text x="196" y="85" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#2B6B29">/home/naps62/stream.result</text>
+  <text x="262" y="115" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545">800</text>
+  <line x1="264" y1="64" x2="264" y2="105" stroke="#BABABA" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="264" y1="106" x2="264" y2="114" stroke="#454545" stroke-width="1"/>
+  <text x="323" y="115" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545">1600</text>
+  <line x1="325" y1="64" x2="325" y2="105" stroke="#BABABA" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="325" y1="106" x2="325" y2="114" stroke="#454545" stroke-width="1"/>
+  <text x="384" y="115" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545">2400</text>
+  <line x1="386" y1="64" x2="386" y2="105" stroke="#BABABA" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="386" y1="106" x2="386" y2="114" stroke="#454545" stroke-width="1"/>
+  <text x="445" y="115" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545">3200</text>
+  <line x1="447" y1="64" x2="447" y2="105" stroke="#BABABA" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="447" y1="106" x2="447" y2="114" stroke="#454545" stroke-width="1"/>
+  <text x="506" y="115" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545">4000</text>
+  <line x1="508" y1="64" x2="508" y2="105" stroke="#BABABA" stroke-width="1" stroke-dasharray="5,5"/>
+  <line x1="508" y1="106" x2="508" y2="114" stroke="#454545" stroke-width="1"/>
+  <rect x="201" y="70" width="270" height="34" fill="#296b69" stroke="#949494" stroke-width="1" xlink:title="/home/naps62/stream.result: 3563.63"/>
+  <text x="196" y="98" font-size="9" text-anchor="end" dominant-baseline="middle" fill="#454545">SE +/- 9.30</text>
+  <text x="466" y="87" font-size="11" text-anchor="end" dominant-baseline="middle" fill="#FFF">3563.63</text>
+  <line x1="201" y1="110" x2="565" y2="110" stroke="#454545" stroke-width="1"/>
+  <rect x="0" y="132" width="580" height="17" fill="#2B6B29"/>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <text x="565" y="141" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#FEFEFE">Powered By Phoronix Test Suite 3.6.0m2</text>
+  </a>
+</svg>

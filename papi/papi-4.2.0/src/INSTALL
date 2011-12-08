@@ -1,0 +1,8 @@
+/* 
+* File:    papi/src/README
+* CVS:     $Id: INSTALL,v 1.8 2004/10/12 12:03:04 mucci Exp $
+* Author:  Philip Mucci
+*          mucci@cs.utk.edu
+*/
+
+Please see the INSTALL.txt in the root directory.

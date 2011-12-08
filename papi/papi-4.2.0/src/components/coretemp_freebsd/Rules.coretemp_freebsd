@@ -1,0 +1,7 @@
+# $Id: Rules.coretemp_freebsd,v 1.1 2011/01/16 22:34:39 servat Exp $
+
+COMPSRCS += components/coretemp_freebsd/coretemp_freebsd.c 
+COMPOBJS += coretemp_freebsd.o
+
+coretemp_freebsd.o: components/coretemp_freebsd/coretemp_freebsd.c components/coretemp_freebsd/coretemp_freebsd.h 
+	$(CC) $(LIBCFLAGS) $(OPTFLAGS) -c components/coretemp_freebsd/coretemp_freebsd.c -o coretemp_freebsd.o 

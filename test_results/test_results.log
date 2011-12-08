@@ -1,0 +1,43 @@
+Log of time nice -n-20 ./run_tests.sh 
+Mon Dec  5 12:25:42 2011
+
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 
+Running test named RAM_2 with n= 131072
+	0 1 2 3 4 5 6 7 8 9 
+Running test named RAM_2 with n= 131072
+	0 1 2 3 Command terminated by signal 2
+6048.69user 2.97system 1:41:24elapsed 99%CPU (0avgtext+0avgdata 47536maxresident)k
+20160inputs+0outputs (4major+214109minor)pagefaults 0swaps
+time died with exit status 130
+
+Mon Dec  5 14:07:07 2011
+----------------

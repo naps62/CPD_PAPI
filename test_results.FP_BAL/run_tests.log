@@ -1,0 +1,44 @@
+Log of time nice -n-20 ./run_tests.sh 
+Mon Dec  5 15:24:49 2011
+
+Running test named L1_1 with n= 64
+	0 1 
+Running test named L1_1 with n= 64
+	0 1 
+Running test named L1_1 with n= 64
+	0 1 
+Running test named L1_2 with n= 128
+	0 1 
+Running test named L1_2 with n= 128
+	0 1 
+Running test named L1_2 with n= 128
+	0 1 
+Running test named L2_1 with n= 8192
+	0 1 
+Running test named L2_1 with n= 8192
+	0 1 
+Running test named L2_1 with n= 8192
+	0 1 
+Running test named L2_2 with n= 16384
+	0 1 
+Running test named L2_2 with n= 16384
+	0 1 
+Running test named L2_2 with n= 16384
+	0 1 
+Running test named RAM_1 with n= 65536
+	0 1 
+Running test named RAM_1 with n= 65536
+	0 1 
+Running test named RAM_1 with n= 65536
+	0 1 
+Running test named RAM_2 with n= 131072
+	0 1 
+Running test named RAM_2 with n= 131072
+	0 1 
+Running test named RAM_2 with n= 131072
+	0 1 
+2183.45user 0.86system 36:36.52elapsed 99%CPU (0avgtext+0avgdata 47296maxresident)k
+20160inputs+0outputs (4major+78839minor)pagefaults 0swaps
+
+Mon Dec  5 16:01:26 2011
+----------------

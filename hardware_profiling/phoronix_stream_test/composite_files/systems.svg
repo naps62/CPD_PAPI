@@ -1,0 +1,106 @@
+<?xml version="1.0"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!--Phoronix Test Suite v3.6.0m2 (Arendal) [ http://www.phoronix-test-suite.com/ ]-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" font-family="sans-serif" viewbox="0 0 465 480" width="465" height="480">
+  <rect x="0" y="0" width="465" height="480" fill="#FEFEFE"/>
+  <rect x="2" y="1" width="462" height="38" fill="#2B6B29"/>
+  <text x="233" y="2" font-size="18" text-anchor="middle" dominant-baseline="text-before-edge" fill="#FEFEFE">/home/naps62/stream.result</text>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <text x="4" y="33" font-size="9" text-anchor="start" dominant-baseline="middle" fill="#FEFEFE">PHORONIX-TEST-SUITE.COM</text>
+  </a>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <text x="461" y="33" font-size="9" text-anchor="end" dominant-baseline="middle" fill="#FEFEFE">Phoronix Test Suite 3.6.0m2</text>
+  </a>
+  <line x1="0" y1="39" x2="465" y2="39" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="46" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Processor</text>
+  <a xlink:href="http://openbenchmarking.org/s/Intel Core 2 Duo P8600" xlink:show="new">
+    <text x="233" y="41" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Processor: Intel Core 2 Duo P8600 @ 2.40GHz (2 Cores)" font-weight="bold">Intel Core 2 Duo P8600 @ 2.40GHz (2 Cores)</text>
+  </a>
+  <rect x="0" y="62" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="62" x2="465" y2="62" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="69" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Motherboard</text>
+  <a xlink:href="http://openbenchmarking.org/s/Quanta 3603 v02.20" xlink:show="new">
+    <text x="233" y="64" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Motherboard: Quanta 3603 v02.20" font-weight="bold">Quanta 3603 v02.20</text>
+  </a>
+  <line x1="0" y1="85" x2="465" y2="85" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="92" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Chipset</text>
+  <a xlink:href="http://openbenchmarking.org/s/Intel Mobile 4 MCH" xlink:show="new">
+    <text x="233" y="87" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Chipset: Intel Mobile 4 MCH + ICH9M" font-weight="bold">Intel Mobile 4 MCH + ICH9M</text>
+  </a>
+  <rect x="0" y="108" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="108" x2="465" y2="108" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="115" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Memory</text>
+  <text x="233" y="110" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Memory: 4096MB" font-weight="bold">4096MB</text>
+  <line x1="0" y1="131" x2="465" y2="131" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="138" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Disk</text>
+  <a xlink:href="http://openbenchmarking.org/s/FUJITSU MHZ2320B" xlink:show="new">
+    <text x="233" y="133" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Disk: 320GB FUJITSU MHZ2320B" font-weight="bold">320GB FUJITSU MHZ2320B</text>
+  </a>
+  <rect x="0" y="154" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="154" x2="465" y2="154" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="161" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Graphics</text>
+  <a xlink:href="http://openbenchmarking.org/s/NVIDIA GeForce 9600M GT" xlink:show="new">
+    <text x="233" y="156" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Graphics: NVIDIA GeForce 9600M GT 512MB (500/400MHz)" font-weight="bold">NVIDIA GeForce 9600M GT 512MB (500/400MHz)</text>
+  </a>
+  <line x1="0" y1="177" x2="465" y2="177" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="184" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Audio</text>
+  <a xlink:href="http://openbenchmarking.org/s/IDT 92HD71B7X" xlink:show="new">
+    <text x="233" y="179" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Audio: IDT 92HD71B7X" font-weight="bold">IDT 92HD71B7X</text>
+  </a>
+  <rect x="0" y="200" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="200" x2="465" y2="200" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="207" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Network</text>
+  <a xlink:href="http://openbenchmarking.org/s/Realtek RTL8111" xlink:show="new">
+    <text x="233" y="202" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Network: Realtek RTL8111/8168B + Broadcom BCM4312 802.11b/g" font-weight="bold">Realtek RTL8111/8168B + Broadcom BCM4312 802.11b/g</text>
+  </a>
+  <line x1="0" y1="223" x2="465" y2="223" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="230" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">OS</text>
+  <a xlink:href="http://openbenchmarking.org/s/LinuxMint 11" xlink:show="new">
+    <text x="233" y="225" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="OS: LinuxMint 11" font-weight="bold">LinuxMint 11</text>
+  </a>
+  <rect x="0" y="246" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="246" x2="465" y2="246" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="253" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Kernel</text>
+  <a xlink:href="http://openbenchmarking.org/s/2.6.38-8-generic" xlink:show="new">
+    <text x="233" y="248" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Kernel: 2.6.38-8-generic (x86_64)" font-weight="bold">2.6.38-8-generic (x86_64)</text>
+  </a>
+  <line x1="0" y1="269" x2="465" y2="269" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="276" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Desktop</text>
+  <text x="233" y="271" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Desktop: GNOME 2.32.1" font-weight="bold">GNOME 2.32.1</text>
+  <rect x="0" y="292" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="292" x2="465" y2="292" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="299" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Display Server</text>
+  <a xlink:href="http://openbenchmarking.org/s/X Server 1.10.1" xlink:show="new">
+    <text x="233" y="294" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Display Server: X Server 1.10.1" font-weight="bold">X Server 1.10.1</text>
+  </a>
+  <line x1="0" y1="315" x2="465" y2="315" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="322" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Display Driver</text>
+  <a xlink:href="http://openbenchmarking.org/s/NVIDIA 270.41.19" xlink:show="new">
+    <text x="233" y="317" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Display Driver: NVIDIA 270.41.19" font-weight="bold">NVIDIA 270.41.19</text>
+  </a>
+  <rect x="0" y="338" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="338" x2="465" y2="338" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="345" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">OpenGL</text>
+  <a xlink:href="http://openbenchmarking.org/s/3.3.0 NVIDIA 270.41.19" xlink:show="new">
+    <text x="233" y="340" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="OpenGL: 3.3.0 NVIDIA 270.41.19" font-weight="bold">3.3.0 NVIDIA 270.41.19</text>
+  </a>
+  <line x1="0" y1="361" x2="465" y2="361" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="368" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Compiler</text>
+  <a xlink:href="http://openbenchmarking.org/s/GCC 4.5.2" xlink:show="new">
+    <text x="233" y="363" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Compiler: GCC 4.5.2" font-weight="bold">GCC 4.5.2</text>
+  </a>
+  <rect x="0" y="384" width="465" height="23" fill="#949494"/>
+  <line x1="0" y1="384" x2="465" y2="384" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="391" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">File-System</text>
+  <a xlink:href="http://openbenchmarking.org/s/ext4" xlink:show="new">
+    <text x="233" y="386" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="File-System: ext4" font-weight="bold">ext4</text>
+  </a>
+  <line x1="0" y1="407" x2="465" y2="407" stroke="#454545" stroke-width="1"/>
+  <text x="461" y="414" font-size="8" text-anchor="end" dominant-baseline="middle" fill="#454545">Screen Resolution</text>
+  <text x="233" y="409" font-size="11" text-anchor="middle" dominant-baseline="text-before-edge" fill="#454545" xlink:title="Screen Resolution: 1280x800" font-weight="bold">1280x800</text>
+  <rect x="1" y="430" width="463" height="50" fill="#2B6B29"/>
+  <a xlink:href="http://www.phoronix-test-suite.com/" xlink:show="new">
+    <image x="10" y="432" width="80" height="42" xlink:href="http://www.phoronix-test-suite.com/external/pts-logo-80x42-white.png"/>
+  </a>
+  <rect x="1" y="1" width="464" height="479" fill="none" stroke="#454545" stroke-width="1"/>
+</svg>

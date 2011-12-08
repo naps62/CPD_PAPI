@@ -1,0 +1,760 @@
+Available native events and hardware information.
+--------------------------------------------------------------------------------
+PAPI Version             : 4.2.0.0
+Vendor string and code   : GenuineIntel (1)
+Model string and code    : Intel(R) Core(TM)2 Duo CPU     P8600  @ 2.40GHz (23)
+CPU Revision             : 6.000000
+CPUID Info               : Family: 6  Model: 23  Stepping: 6
+CPU Megahertz            : 2401.000000
+CPU Clock Megahertz      : 2401
+Hdw Threads per core     : 1
+Cores per Socket         : 2
+NUMA Nodes               : 1
+CPU's per Node           : 2
+Total CPU's              : 2
+Number Hardware Counters : 5
+Max Multiplex Counters   : 64
+--------------------------------------------------------------------------------
+The following correspond to fields in the PAPI_event_info_t structure.
+
+Event Code   Symbol  | Long Description |
+--------------------------------------------------------------------------------
+0x40000000   UNHALTED_CORE_CYCLES  | Count core clock cycles whenever the cloc |
+           | k signal on the specific core is running (not halted)             |
+--------------------------------------------------------------------------------
+0x40000024   INSTRUCTION_RETIRED  | Count the number of instructions at retire |
+           | ment                                                              |
+--------------------------------------------------------------------------------
+0x40000001   INSTRUCTIONS_RETIRED  | This is an alias from INSTRUCTION_RETIRED |
+           |                                                                   |
+--------------------------------------------------------------------------------
+0x40000025   UNHALTED_REFERENCE_CYCLES  | Unhalted reference cycles            |
+--------------------------------------------------------------------------------
+0x40000026   LLC_REFERENCES  | Count each request originating equiv the core t |
+           | o reference a cache line in the last level cache. The count may i |
+           | nclude speculation, but excludes cache line fills due to hardware |
+           |  prefetch. Alias to L2_RQSTS:SELF_DEMAND_MESI                     |
+--------------------------------------------------------------------------------
+0x40000006   LAST_LEVEL_CACHE_REFERENCES  | This is an alias for LLC_REFERENCE |
+           | S                                                                 |
+--------------------------------------------------------------------------------
+0x40000027   LLC_MISSES  | Count each cache miss condition for references to t |
+           | he last level cache. The event count may include speculation, but |
+           |  excludes cache line fills due to hardware prefetch. Alias to eve |
+           | nt L2_RQSTS:SELF_DEMAND_I_STATE                                   |
+--------------------------------------------------------------------------------
+0x40000028   LAST_LEVEL_CACHE_MISSES  | This is an alias for LLC_MISSES        |
+--------------------------------------------------------------------------------
+0x40000029   BRANCH_INSTRUCTIONS_RETIRED  | Count branch instructions at retir |
+           | ement. Specifically, this event counts the retirement of the last |
+           |  micro-op of a branch instruction.                                |
+--------------------------------------------------------------------------------
+0x4000002a   MISPREDICTED_BRANCH_RETIRED  | Count mispredicted branch instruct |
+           | ions at retirement. Specifically, this event counts at retirement |
+           |  of the last micro-op of a branch instruction in the architectura |
+           | l path of the execution and experienced misprediction in the bran |
+           | ch prediction hardware.                                           |
+--------------------------------------------------------------------------------
+0x4000002b   RS_UOPS_DISPATCHED_CYCLES  | Cycles micro-ops dispatched for exec |
+           | ution                                                             |
+  4000002c   :PORT_0  | On port 0                                              |
+  4000002d   :PORT_1  | On port 1                                              |
+  4000002e   :PORT_2  | On port 2                                              |
+  4000002f   :PORT_3  | On port 3                                              |
+  40000030   :PORT_4  | On port 4                                              |
+  40000031   :PORT_5  | On port 5                                              |
+  40000032   :ANY  | On any port                                               |
+--------------------------------------------------------------------------------
+0x40000033   RS_UOPS_DISPATCHED  | Number of micro-ops dispatched for executio |
+           | n                                                                 |
+--------------------------------------------------------------------------------
+0x40000034   RS_UOPS_DISPATCHED_NONE  | Number of of cycles in which no micro- |
+           | ops is dispatched for execution                                   |
+--------------------------------------------------------------------------------
+0x40000035   LOAD_BLOCK  | Loads blocked                                       |
+  40000036   :STA  | Loads blocked by a preceding store with unknown address   |
+  40000037   :STD  | Loads blocked by a preceding store with unknown data      |
+  40000038   :OVERLAP_STORE  | Loads that partially overlap an earlier store,  |
+           | or 4K equived with a previous store                               |
+  40000039   :UNTIL_RETIRE  | Loads blocked until retirement                   |
+  4000003a   :L1D  | Loads blocked by the L1 data cache                        |
+--------------------------------------------------------------------------------
+0x4000003b   SB_DRAIN_CYCLES  | Cycles while stores are blocked due to store b |
+           | uffer drain                                                       |
+--------------------------------------------------------------------------------
+0x4000003c   STORE_BLOCK  | Cycles while store is waiting                      |
+  4000003d   :ORDER  | Cycles while store is waiting for a preceding store to  |
+           | be globally observed                                              |
+  4000003e   :SNOOP  | A store is blocked due to a conflict with an external o |
+           | r internal snoop                                                  |
+--------------------------------------------------------------------------------
+0x4000003f   SEGMENT_REG_LOADS  | Number of segment register loads             |
+--------------------------------------------------------------------------------
+0x40000040   SSE_PRE_EXEC  | Streaming SIMD Extensions (SSE) Prefetch instruct |
+           | ions executed                                                     |
+  40000041   :NTA  | Streaming SIMD Extensions (SSE) Prefetch NTA instructions |
+           |  executed                                                         |
+  40000042   :L1  | Streaming SIMD Extensions (SSE) PrefetchT0 instructions ex |
+           | ecuted                                                            |
+  40000043   :L2  | Streaming SIMD Extensions (SSE) PrefetchT1 and PrefetchT2  |
+           | instructions executed                                             |
+  40000044   :STORES  | Streaming SIMD Extensions (SSE) Weakly-ordered store i |
+           | nstructions executed                                              |
+--------------------------------------------------------------------------------
+0x40000045   DTLB_MISSES  | Memory accesses that missed the DTLB               |
+  40000014   :ANY  | Any memory access that missed the DTLB                    |
+  40000046   :MISS_LD  | DTLB misses due to load operations                    |
+  40000047   :L0_MISS_LD  | L0 DTLB misses due to load operations              |
+  40000048   :MISS_ST  | DTLB misses due to store operations                   |
+--------------------------------------------------------------------------------
+0x40000049   MEMORY_DISAMBIGUATION  | Memory disambiguation                    |
+  4000004a   :RESET  | Memory disambiguation reset cycles                      |
+  4000004b   :SUCCESS  | Number of loads that were successfully disambiguated  |
+--------------------------------------------------------------------------------
+0x4000004c   PAGE_WALKS  | Number of page-walks executed                       |
+  4000004d   :COUNT  | Number of page-walks executed                           |
+  4000004e   :CYCLES  | Duration of page-walks in core cycles                  |
+--------------------------------------------------------------------------------
+0x4000001e   FP_COMP_OPS_EXE  | Floating point computational micro-ops execute |
+           | d                                                                 |
+--------------------------------------------------------------------------------
+0x4000004f   FP_ASSIST  | Floating point assists                               |
+--------------------------------------------------------------------------------
+0x40000021   MUL  | Multiply operations executed                               |
+--------------------------------------------------------------------------------
+0x40000022   DIV  | Divide operations executed                                 |
+--------------------------------------------------------------------------------
+0x40000050   CYCLES_DIV_BUSY  | Cycles the divider is busy                     |
+--------------------------------------------------------------------------------
+0x40000051   IDLE_DURING_DIV  | Cycles the divider is busy and all other execu |
+           | tion units are idle                                               |
+--------------------------------------------------------------------------------
+0x40000052   DELAYED_BYPASS  | Delayed bypass                                  |
+  40000053   :FP  | Delayed bypass to FP operation                             |
+  40000054   :SIMD  | Delayed bypass to SIMD operation                         |
+  40000055   :LOAD  | Delayed bypass to load operation                         |
+--------------------------------------------------------------------------------
+0x40000056   L2_ADS  | Cycles L2 address bus is in use                         |
+  40000057   :SELF  | This core                                                |
+  40000058   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x40000059   L2_DBUS_BUSY_RD  | Cycles the L2 transfers data to the core       |
+  4000005a   :SELF  | This core                                                |
+  4000005b   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x4000005c   L2_LINES_IN  | L2 cache misses                                    |
+  4000005d   :SELF  | This core                                                |
+  4000005e   :BOTH_CORES  | Both cores                                         |
+  4000005f   :ANY  | All inclusive                                             |
+  40000060   :PREFETCH  | Hardware prefetch only                               |
+  40000061   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+--------------------------------------------------------------------------------
+0x40000062   L2_M_LINES_IN  | L2 cache line modifications                      |
+  4000000b   :SELF  | This core                                                |
+  40000063   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x40000064   L2_LINES_OUT  | L2 cache lines evicted                            |
+  40000065   :SELF  | This core                                                |
+  40000066   :BOTH_CORES  | Both cores                                         |
+  40000067   :ANY  | All inclusive                                             |
+  40000068   :PREFETCH  | Hardware prefetch only                               |
+  40000069   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+--------------------------------------------------------------------------------
+0x4000006a   L2_M_LINES_OUT  | Modified lines evicted from the L2 cache        |
+  4000006b   :SELF  | This core                                                |
+  4000006c   :BOTH_CORES  | Both cores                                         |
+  4000006d   :ANY  | All inclusive                                             |
+  4000006e   :PREFETCH  | Hardware prefetch only                               |
+  4000006f   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+--------------------------------------------------------------------------------
+0x40000070   L2_IFETCH  | L2 cacheable instruction fetch requests              |
+  40000071   :SELF  | This core                                                |
+  40000072   :BOTH_CORES  | Both cores                                         |
+  40000073   :MESI  | Any cacheline access                                     |
+  40000074   :I_STATE  | Invalid cacheline                                     |
+  40000075   :S_STATE  | Shared cacheline                                      |
+  40000076   :E_STATE  | Exclusive cacheline                                   |
+  40000077   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x40000078   L2_LD  | L2 cache reads                                           |
+  40000079   :SELF  | This core                                                |
+  4000007a   :BOTH_CORES  | Both cores                                         |
+  4000007b   :ANY  | All inclusive                                             |
+  4000007c   :PREFETCH  | Hardware prefetch only                               |
+  4000007d   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+  4000007e   :MESI  | Any cacheline access                                     |
+  4000007f   :I_STATE  | Invalid cacheline                                     |
+  40000080   :S_STATE  | Shared cacheline                                      |
+  40000081   :E_STATE  | Exclusive cacheline                                   |
+  40000082   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x40000083   L2_ST  | L2 store requests                                        |
+  40000084   :SELF  | This core                                                |
+  40000085   :BOTH_CORES  | Both cores                                         |
+  40000086   :MESI  | Any cacheline access                                     |
+  40000087   :I_STATE  | Invalid cacheline                                     |
+  40000088   :S_STATE  | Shared cacheline                                      |
+  40000089   :E_STATE  | Exclusive cacheline                                   |
+  4000008a   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x4000008b   L2_LOCK  | L2 locked accesses                                     |
+  4000008c   :SELF  | This core                                                |
+  4000008d   :BOTH_CORES  | Both cores                                         |
+  4000008e   :MESI  | Any cacheline access                                     |
+  4000008f   :I_STATE  | Invalid cacheline                                     |
+  40000090   :S_STATE  | Shared cacheline                                      |
+  40000091   :E_STATE  | Exclusive cacheline                                   |
+  40000092   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x40000093   L2_RQSTS  | L2 cache requests                                     |
+  40000094   :SELF  | This core                                                |
+  40000095   :BOTH_CORES  | Both cores                                         |
+  40000096   :ANY  | All inclusive                                             |
+  40000097   :PREFETCH  | Hardware prefetch only                               |
+  40000098   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+  40000099   :MESI  | Any cacheline access                                     |
+  4000009a   :I_STATE  | Invalid cacheline                                     |
+  4000009b   :S_STATE  | Shared cacheline                                      |
+  4000009c   :E_STATE  | Exclusive cacheline                                   |
+  4000009d   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x4000009e   L2_REJECT_BUSQ  | Rejected L2 cache requests                      |
+  4000009f   :SELF  | This core                                                |
+  400000a0   :BOTH_CORES  | Both cores                                         |
+  400000a1   :ANY  | All inclusive                                             |
+  400000a2   :PREFETCH  | Hardware prefetch only                               |
+  400000a3   :EXCL_PREFETCH  | Exclude hardware prefetch                       |
+  400000a4   :MESI  | Any cacheline access                                     |
+  400000a5   :I_STATE  | Invalid cacheline                                     |
+  400000a6   :S_STATE  | Shared cacheline                                      |
+  400000a7   :E_STATE  | Exclusive cacheline                                   |
+  400000a8   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x400000a9   L2_NO_REQ  | Cycles no L2 cache requests are pending              |
+  400000aa   :SELF  | This core                                                |
+  400000ab   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x400000ac   EIST_TRANS  | Number of Enhanced Intel SpeedStep(R) Technology (E |
+           | IST) transitions                                                  |
+--------------------------------------------------------------------------------
+0x400000ad   THERMAL_TRIP  | Number of thermal trips                           |
+--------------------------------------------------------------------------------
+0x400000ae   CPU_CLK_UNHALTED  | Core cycles when core is not halted           |
+  400000af   :CORE_P  | Core cycles when core is not halted                    |
+  400000b0   :BUS  | Bus cycles when core is not halted. This event can give a |
+           |  measurement of the elapsed time. This events has a constant rati |
+           | o with CPU_CLK_UNHALTED:REF event, which is the maximum bus to pr |
+           | ocessor frequency ratio                                           |
+  400000b1   :NO_OTHER  | Bus cycles when core is active and the other is halt |
+           | ed                                                                |
+--------------------------------------------------------------------------------
+0x400000b2   L1D_CACHE_LD  | L1 cacheable data reads                           |
+  400000b3   :MESI  | Any cacheline access                                     |
+  400000b4   :I_STATE  | Invalid cacheline                                     |
+  400000b5   :S_STATE  | Shared cacheline                                      |
+  400000b6   :E_STATE  | Exclusive cacheline                                   |
+  400000b7   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x400000b8   L1D_CACHE_ST  | L1 cacheable data writes                          |
+  400000b9   :MESI  | Any cacheline access                                     |
+  400000ba   :I_STATE  | Invalid cacheline                                     |
+  400000bb   :S_STATE  | Shared cacheline                                      |
+  400000bc   :E_STATE  | Exclusive cacheline                                   |
+  400000bd   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x400000be   L1D_CACHE_LOCK  | L1 data cacheable locked reads                  |
+  400000bf   :MESI  | Any cacheline access                                     |
+  400000c0   :I_STATE  | Invalid cacheline                                     |
+  400000c1   :S_STATE  | Shared cacheline                                      |
+  400000c2   :E_STATE  | Exclusive cacheline                                   |
+  400000c3   :M_STATE  | Modified cacheline                                    |
+--------------------------------------------------------------------------------
+0x40000005   L1D_ALL_REF  | All references to the L1 data cache                |
+--------------------------------------------------------------------------------
+0x400000c4   L1D_ALL_CACHE_REF  | L1 Data cacheable reads and writes           |
+--------------------------------------------------------------------------------
+0x40000004   L1D_REPL  | Cache lines allocated in the L1 data cache            |
+--------------------------------------------------------------------------------
+0x400000c5   L1D_M_REPL  | Modified cache lines allocated in the L1 data cache |
+           |                                                                   |
+--------------------------------------------------------------------------------
+0x400000c6   L1D_M_EVICT  | Modified cache lines evicted from the L1 data cach |
+           | e                                                                 |
+--------------------------------------------------------------------------------
+0x400000c7   L1D_PEND_MISS  | Total number of outstanding L1 data cache misses |
+           |  at any cycle                                                     |
+--------------------------------------------------------------------------------
+0x400000c8   L1D_SPLIT  | Cache line split from L1 data cache                  |
+  400000c9   :LOADS  | Cache line split loads from the L1 data cache           |
+  400000ca   :STORES  | Cache line split stores to the L1 data cache           |
+--------------------------------------------------------------------------------
+0x400000cb   SSE_PRE_MISS  | Streaming SIMD Extensions (SSE) instructions miss |
+           | ing all cache levels                                              |
+  400000cc   :NTA  | Streaming SIMD Extensions (SSE) Prefetch NTA instructions |
+           |  missing all cache levels                                         |
+  400000cd   :L1  | Streaming SIMD Extensions (SSE) PrefetchT0 instructions mi |
+           | ssing all cache levels                                            |
+  400000ce   :L2  | Streaming SIMD Extensions (SSE) PrefetchT1 and PrefetchT2  |
+           | instructions missing all cache levels                             |
+--------------------------------------------------------------------------------
+0x400000cf   LOAD_HIT_PRE  | Load operations conflicting with a software prefe |
+           | tch to the same address                                           |
+--------------------------------------------------------------------------------
+0x400000d0   L1D_PREFETCH  | L1 data cache prefetch                            |
+  400000d1   :REQUESTS  | L1 data cache prefetch requests                      |
+--------------------------------------------------------------------------------
+0x400000d2   BUS_REQUEST_OUTSTANDING  | Number of pending full cache line read |
+           |  transactions on the bus occurring in each cycle                  |
+  400000d3   :SELF  | This core                                                |
+  400000d4   :BOTH_CORES  | Both cores                                         |
+  400000d5   :THIS_AGENT  | This agent                                         |
+  400000d6   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000d7   BUS_BNR_DRV  | Number of Bus Not Ready signals asserted           |
+  400000d8   :THIS_AGENT  | This agent                                         |
+  400000d9   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000da   BUS_DRDY_CLOCKS  | Bus cycles when data is sent on the bus        |
+  400000db   :THIS_AGENT  | This agent                                         |
+  400000dc   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000dd   BUS_LOCK_CLOCKS  | Bus cycles when a LOCK signal is asserted      |
+  400000de   :SELF  | This core                                                |
+  400000df   :BOTH_CORES  | Both cores                                         |
+  400000e0   :THIS_AGENT  | This agent                                         |
+  400000e1   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000e2   BUS_DATA_RCV  | Bus cycles while processor receives data          |
+  400000e3   :SELF  | This core                                                |
+  400000e4   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x400000e5   BUS_TRANS_BRD  | Burst read bus transactions                      |
+  400000e6   :SELF  | This core                                                |
+  400000e7   :BOTH_CORES  | Both cores                                         |
+  400000e8   :THIS_AGENT  | This agent                                         |
+  400000e9   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000ea   BUS_TRANS_RFO  | RFO bus transactions                             |
+  40000011   :SELF  | This core                                                |
+  400000eb   :BOTH_CORES  | Both cores                                         |
+  400000ec   :THIS_AGENT  | This agent                                         |
+  400000ed   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000ee   BUS_TRANS_WB  | Explicit writeback bus transactions               |
+  400000ef   :SELF  | This core                                                |
+  400000f0   :BOTH_CORES  | Both cores                                         |
+  400000f1   :THIS_AGENT  | This agent                                         |
+  400000f2   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000f3   BUS_TRANS_IFETCH  | Instruction-fetch bus transactions            |
+  4000000a   :SELF  | This core                                                |
+  400000f4   :BOTH_CORES  | Both cores                                         |
+  400000f5   :THIS_AGENT  | This agent                                         |
+  400000f6   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000f7   BUS_TRANS_INVAL  | Invalidate bus transactions                    |
+  40000012   :SELF  | This core                                                |
+  400000f8   :BOTH_CORES  | Both cores                                         |
+  400000f9   :THIS_AGENT  | This agent                                         |
+  400000fa   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x400000fb   BUS_TRANS_PWR  | Partial write bus transaction                    |
+  400000fc   :SELF  | This core                                                |
+  400000fd   :BOTH_CORES  | Both cores                                         |
+  400000fe   :THIS_AGENT  | This agent                                         |
+  400000ff   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000100   BUS_TRANS_P  | Partial bus transactions                           |
+  40000101   :SELF  | This core                                                |
+  40000102   :BOTH_CORES  | Both cores                                         |
+  40000103   :THIS_AGENT  | This agent                                         |
+  40000104   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000105   BUS_TRANS_IO  | IO bus transactions                               |
+  40000106   :SELF  | This core                                                |
+  40000107   :BOTH_CORES  | Both cores                                         |
+  40000108   :THIS_AGENT  | This agent                                         |
+  40000109   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x4000010a   BUS_TRANS_DEF  | Deferred bus transactions                        |
+  4000010b   :SELF  | This core                                                |
+  4000010c   :BOTH_CORES  | Both cores                                         |
+  4000010d   :THIS_AGENT  | This agent                                         |
+  4000010e   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x4000010f   BUS_TRANS_BURST  | Burst (full cache-line) bus transactions       |
+  40000110   :SELF  | This core                                                |
+  40000111   :BOTH_CORES  | Both cores                                         |
+  40000112   :THIS_AGENT  | This agent                                         |
+  40000113   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000114   BUS_TRANS_MEM  | Memory bus transactions                          |
+  40000115   :SELF  | This core                                                |
+  40000116   :BOTH_CORES  | Both cores                                         |
+  40000117   :THIS_AGENT  | This agent                                         |
+  40000118   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000119   BUS_TRANS_ANY  | All bus transactions                             |
+  4000011a   :SELF  | This core                                                |
+  4000011b   :BOTH_CORES  | Both cores                                         |
+  4000011c   :THIS_AGENT  | This agent                                         |
+  4000011d   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x4000011e   EXT_SNOOP  | External snoops responses                            |
+  4000011f   :ANY  | Any external snoop response                               |
+  40000120   :CLEAN  | External snoop CLEAN response                           |
+  40000121   :HIT  | External snoop HIT response                               |
+  40000122   :HITM  | External snoop HITM response                             |
+  40000123   :THIS_AGENT  | This agent                                         |
+  40000124   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000125   CMP_SNOOP  | L1 data cache is snooped by other core               |
+  40000126   :ANY  | L1 data cache is snooped by other core                    |
+  40000127   :SHARE  | L1 data cache is snooped for sharing by other core      |
+  40000128   :INVALIDATE  | L1 data cache is snooped for Invalidation by other |
+           |  core                                                             |
+  40000129   :SELF  | This core                                                |
+  4000012a   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x4000012b   BUS_HIT_DRV  | HIT signal asserted                                |
+  4000012c   :THIS_AGENT  | This agent                                         |
+  4000012d   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x4000012e   BUS_HITM_DRV  | HITM signal asserted                              |
+  4000012f   :THIS_AGENT  | This agent                                         |
+  40000130   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000131   BUSQ_EMPTY  | Bus queue is empty                                  |
+  40000132   :THIS_AGENT  | This agent                                         |
+  40000133   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000134   SNOOP_STALL_DRV  | Bus stalled for snoops                         |
+  40000135   :SELF  | This core                                                |
+  40000136   :BOTH_CORES  | Both cores                                         |
+  40000137   :THIS_AGENT  | This agent                                         |
+  40000138   :ALL_AGENTS  | Any agent on the bus                               |
+--------------------------------------------------------------------------------
+0x40000139   BUS_IO_WAIT  | IO requests waiting in the bus queue               |
+  4000013a   :SELF  | This core                                                |
+  4000013b   :BOTH_CORES  | Both cores                                         |
+--------------------------------------------------------------------------------
+0x40000003   L1I_READS  | Instruction fetches                                  |
+--------------------------------------------------------------------------------
+0x40000002   L1I_MISSES  | Instruction Fetch Unit misses                       |
+--------------------------------------------------------------------------------
+0x4000013c   ITLB  | ITLB small page misses                                    |
+  4000013d   :SMALL_MISS  | ITLB small page misses                             |
+  4000013e   :LARGE_MISS  | ITLB large page misses                             |
+  4000013f   :FLUSH  | ITLB flushes                                            |
+  40000013   :MISSES  | ITLB misses                                            |
+--------------------------------------------------------------------------------
+0x40000140   INST_QUEUE  | Cycles during which the instruction queue is full   |
+  40000141   :FULL  | Cycles during which the instruction queue is full        |
+--------------------------------------------------------------------------------
+0x40000142   CYCLES_L1I_MEM_STALLED  | Cycles during which instruction fetches |
+           |  are stalled                                                      |
+--------------------------------------------------------------------------------
+0x40000143   ILD_STALL  | Instruction Length Decoder stall cycles due to a len |
+           | gth changing prefix                                               |
+--------------------------------------------------------------------------------
+0x40000017   BR_INST_EXEC  | Branch instructions executed                      |
+--------------------------------------------------------------------------------
+0x40000018   BR_MISSP_EXEC  | Mispredicted branch instructions executed        |
+--------------------------------------------------------------------------------
+0x40000144   BR_BAC_MISSP_EXEC  | Branch instructions mispredicted at decoding |
+           |                                                                   |
+--------------------------------------------------------------------------------
+0x40000019   BR_CND_EXEC  | Conditional branch instructions executed           |
+--------------------------------------------------------------------------------
+0x4000001a   BR_CND_MISSP_EXEC  | Mispredicted conditional branch instructions |
+           |  executed                                                         |
+--------------------------------------------------------------------------------
+0x40000145   BR_IND_EXEC  | Indirect branch instructions executed              |
+--------------------------------------------------------------------------------
+0x40000146   BR_IND_MISSP_EXEC  | Mispredicted indirect branch instructions ex |
+           | ecuted                                                            |
+--------------------------------------------------------------------------------
+0x40000147   BR_RET_EXEC  | RET instructions executed                          |
+--------------------------------------------------------------------------------
+0x40000148   BR_RET_MISSP_EXEC  | Mispredicted RET instructions executed       |
+--------------------------------------------------------------------------------
+0x40000149   BR_RET_BAC_MISSP_EXEC  | RET instructions executed mispredicted a |
+           | t decoding                                                        |
+--------------------------------------------------------------------------------
+0x4000014a   BR_CALL_EXEC  | CALL instructions executed                        |
+--------------------------------------------------------------------------------
+0x4000014b   BR_CALL_MISSP_EXEC  | Mispredicted CALL instructions executed     |
+--------------------------------------------------------------------------------
+0x4000014c   BR_IND_CALL_EXEC  | Indirect CALL instructions executed           |
+--------------------------------------------------------------------------------
+0x4000014d   BR_TKN_BUBBLE_1  | Branch predicted taken with bubble I           |
+--------------------------------------------------------------------------------
+0x4000014e   BR_TKN_BUBBLE_2  | Branch predicted taken with bubble II          |
+--------------------------------------------------------------------------------
+0x4000014f   MACRO_INSTS  | Instructions decoded                               |
+  4000001b   :DECODED  | Instructions decoded                                  |
+  40000150   :CISC_DECODED  | CISC instructions decoded                        |
+--------------------------------------------------------------------------------
+0x40000151   ESP  | ESP register content synchronization                       |
+  40000152   :SYNCH  | ESP register content synchronization                    |
+  40000153   :ADDITIONS  | ESP register automatic additions                    |
+--------------------------------------------------------------------------------
+0x40000154   SIMD_UOPS_EXEC  | SIMD micro-ops executed (excluding stores)      |
+--------------------------------------------------------------------------------
+0x40000155   SIMD_SAT_UOP_EXEC  | SIMD saturated arithmetic micro-ops executed |
+           |                                                                   |
+--------------------------------------------------------------------------------
+0x40000156   SIMD_UOP_TYPE_EXEC  | SIMD packed multiply micro-ops executed     |
+  40000157   :MUL  | SIMD packed multiply micro-ops executed                   |
+  40000158   :SHIFT  | SIMD packed shift micro-ops executed                    |
+  40000159   :PACK  | SIMD pack micro-ops executed                             |
+  4000015a   :UNPACK  | SIMD unpack micro-ops executed                         |
+  4000015b   :LOGICAL  | SIMD packed logical micro-ops executed                |
+  4000015c   :ARITHMETIC  | SIMD packed arithmetic micro-ops executed          |
+--------------------------------------------------------------------------------
+0x4000015d   INST_RETIRED  | Instructions retired                              |
+  4000015e   :ANY_P  | Instructions retired (Precise Event)                    |
+  4000000e   :LOADS  | Instructions retired, which contain a load              |
+  4000000f   :STORES  | Instructions retired, which contain a store            |
+  4000015f   :OTHER  | Instructions retired, with no load or store operation   |
+--------------------------------------------------------------------------------
+0x40000160   X87_OPS_RETIRED  | FXCH instructions retired                      |
+  40000161   :FXCH  | FXCH instructions retired                                |
+  40000162   :ANY  | Retired floating-point computational operations (Precise  |
+           | Event)                                                            |
+--------------------------------------------------------------------------------
+0x40000163   UOPS_RETIRED  | Fused load+op or load+indirect branch retired     |
+  40000164   :LD_IND_BR  | Fused load+op or load+indirect branch retired       |
+  40000165   :STD_STA  | Fused store address + data retired                    |
+  40000166   :MACRO_FUSION  | Retired instruction pairs fused into one micro-o |
+           | p                                                                 |
+  40000167   :NON_FUSED  | Non-fused micro-ops retired                         |
+  40000168   :FUSED  | Fused micro-ops retired                                 |
+  40000169   :ANY  | Micro-ops retired                                         |
+--------------------------------------------------------------------------------
+0x4000016a   MACHINE_NUKES  | Self-Modifying Code detected                     |
+  4000016b   :SMC  | Self-Modifying Code detected                              |
+  4000016c   :MEM_ORDER  | Execution pipeline restart due to memory ordering c |
+           | onflict or memory disambiguation misprediction                    |
+--------------------------------------------------------------------------------
+0x4000016d   BR_INST_RETIRED  | Retired branch instructions                    |
+  4000016e   :ANY  | Retired branch instructions                               |
+  4000016f   :PRED_NOT_TAKEN  | Retired branch instructions that were predicte |
+           | d not-taken                                                       |
+  40000170   :MISPRED_NOT_TAKEN  | Retired branch instructions that were mispr |
+           | edicted not-taken                                                 |
+  40000171   :PRED_TAKEN  | Retired branch instructions that were predicted ta |
+           | ken                                                               |
+  40000172   :MISPRED_TAKEN  | Retired branch instructions that were mispredic |
+           | ted taken                                                         |
+  40000015   :TAKEN  | Retired taken branch instructions                       |
+--------------------------------------------------------------------------------
+0x40000173   BR_INST_RETIRED_MISPRED  | Retired mispredicted branch instructio |
+           | ns (Precise_Event)                                                |
+--------------------------------------------------------------------------------
+0x40000174   CYCLES_INT_MASKED  | Cycles during which interrupts are disabled  |
+--------------------------------------------------------------------------------
+0x40000175   CYCLES_INT_PENDING_AND_MASKED  | Cycles during which interrupts a |
+           | re pending and disabled                                           |
+--------------------------------------------------------------------------------
+0x40000176   SIMD_INST_RETIRED  | Retired Streaming SIMD Extensions (SSE) pack |
+           | ed-single instructions                                            |
+  40000177   :PACKED_SINGLE  | Retired Streaming SIMD Extensions (SSE) packed- |
+           | single instructions                                               |
+  40000178   :SCALAR_SINGLE  | Retired Streaming SIMD Extensions (SSE) scalar- |
+           | single instructions                                               |
+  40000179   :PACKED_DOUBLE  | Retired Streaming SIMD Extensions 2 (SSE2) pack |
+           | ed-double instructions                                            |
+  4000017a   :SCALAR_DOUBLE  | Retired Streaming SIMD Extensions 2 (SSE2) scal |
+           | ar-double instructions                                            |
+  40000023   :VECTOR  | Retired Streaming SIMD Extensions 2 (SSE2) vector inte |
+           | ger instructions                                                  |
+  4000017b   :ANY  | Retired Streaming SIMD instructions (Precise Event)       |
+--------------------------------------------------------------------------------
+0x4000001c   HW_INT_RCV  | Hardware interrupts received                        |
+--------------------------------------------------------------------------------
+0x4000017c   ITLB_MISS_RETIRED  | Retired instructions that missed the ITLB    |
+--------------------------------------------------------------------------------
+0x4000017d   SIMD_COMP_INST_RETIRED  | Retired computational Streaming SIMD Ex |
+           | tensions (SSE) packed-single instructions                         |
+  4000001f   :PACKED_SINGLE  | Retired computational Streaming SIMD Extensions |
+           |  (SSE) packed-single instructions                                 |
+  4000017e   :SCALAR_SINGLE  | Retired computational Streaming SIMD Extensions |
+           |  (SSE) scalar-single instructions                                 |
+  40000020   :PACKED_DOUBLE  | Retired computational Streaming SIMD Extensions |
+           |  2 (SSE2) packed-double instructions                              |
+  4000017f   :SCALAR_DOUBLE  | Retired computational Streaming SIMD Extensions |
+           |  2 (SSE2) scalar-double instructions                              |
+--------------------------------------------------------------------------------
+0x40000180   MEM_LOAD_RETIRED  | Retired loads that miss the L1 data cache     |
+  40000181   :L1D_MISS  | Retired loads that miss the L1 data cache (Precise E |
+           | vent)                                                             |
+  40000182   :L1D_LINE_MISS  | L1 data cache line missed by retired loads (Pre |
+           | cise Event)                                                       |
+  40000183   :L2_MISS  | Retired loads that miss the L2 cache (Precise Event)  |
+  40000184   :L2_LINE_MISS  | L2 cache line missed by retired loads (Precise E |
+           | vent)                                                             |
+  40000185   :DTLB_MISS  | Retired loads that miss the DTLB (Precise Event)    |
+--------------------------------------------------------------------------------
+0x40000186   FP_MMX_TRANS  | Transitions from MMX (TM) Instructions to Floatin |
+           | g Point Instructions                                              |
+  40000187   :TO_FP  | Transitions from MMX (TM) Instructions to Floating Poin |
+           | t Instructions                                                    |
+  40000188   :TO_MMX  | Transitions from Floating Point to MMX (TM) Instructio |
+           | ns                                                                |
+--------------------------------------------------------------------------------
+0x40000189   SIMD_ASSIST  | SIMD assists invoked                               |
+--------------------------------------------------------------------------------
+0x4000018a   SIMD_INSTR_RETIRED  | SIMD Instructions retired                   |
+--------------------------------------------------------------------------------
+0x4000018b   SIMD_SAT_INSTR_RETIRED  | Saturated arithmetic instructions retir |
+           | ed                                                                |
+--------------------------------------------------------------------------------
+0x4000018c   RAT_STALLS  | ROB read port stalls cycles                         |
+  4000018d   :ROB_READ_PORT  | ROB read port stalls cycles                     |
+  4000018e   :PARTIAL_CYCLES  | Partial register stall cycles                  |
+  4000018f   :FLAGS  | Flag stall cycles                                       |
+  40000190   :FPSW  | FPU status word stall                                    |
+  40000191   :ANY  | All RAT stall cycles                                      |
+--------------------------------------------------------------------------------
+0x40000192   SEG_RENAME_STALLS  | Segment rename stalls - ES                   |
+  40000193   :ES  | Segment rename stalls - ES                                 |
+  40000194   :DS  | Segment rename stalls - DS                                 |
+  40000195   :FS  | Segment rename stalls - FS                                 |
+  40000196   :GS  | Segment rename stalls - GS                                 |
+  40000197   :ANY  | Any (ES/DS/FS/GS) segment rename stall                    |
+--------------------------------------------------------------------------------
+0x40000198   SEG_REG_RENAMES  | Segment renames - ES                           |
+  40000199   :ES  | Segment renames - ES                                       |
+  4000019a   :DS  | Segment renames - DS                                       |
+  4000019b   :FS  | Segment renames - FS                                       |
+  4000019c   :GS  | Segment renames - GS                                       |
+  4000019d   :ANY  | Any (ES/DS/FS/GS) segment rename                          |
+--------------------------------------------------------------------------------
+0x4000019e   RESOURCE_STALLS  | Cycles during which the ROB is full            |
+  4000019f   :ROB_FULL  | Cycles during which the ROB is full                  |
+  400001a0   :RS_FULL  | Cycles during which the RS is full                    |
+  400001a1   :LD_ST  | Cycles during which the pipeline has exceeded load or s |
+           | tore limit or waiting to commit all stores                        |
+  400001a2   :FPCW  | Cycles stalled due to FPU control word write             |
+  400001a3   :BR_MISS_CLEAR  | Cycles stalled due to branch misprediction      |
+  4000001d   :ANY  | Resource related stalls                                   |
+--------------------------------------------------------------------------------
+0x400001a4   BR_INST_DECODED  | Branch instructions decoded                    |
+--------------------------------------------------------------------------------
+0x400001a5   BOGUS_BR  | Bogus branches                                        |
+--------------------------------------------------------------------------------
+0x400001a6   BACLEARS  | BACLEARS asserted                                     |
+--------------------------------------------------------------------------------
+0x400001a7   PREF_RQSTS_UP  | Upward prefetches issued from the DPL            |
+--------------------------------------------------------------------------------
+0x400001a8   PREF_RQSTS_DN  | Downward prefetches issued from the DPL          |
+--------------------------------------------------------------------------------
+0x400001a9   ix86arch::UNHALTED_CORE_CYCLES  | count core clock cycles wheneve |
+           | r the clock signal on the specific core is running (not halted)   |
+--------------------------------------------------------------------------------
+0x400001aa   ix86arch::INSTRUCTION_RETIRED  | count the number of instructions |
+           |  at retirement. For instructions that consists of multiple micro- |
+           | ops, this event counts the retirement of the last micro-op of the |
+           |  instruction                                                      |
+--------------------------------------------------------------------------------
+0x400001ab   ix86arch::UNHALTED_REFERENCE_CYCLES  | count reference clock cycl |
+           | es while the clock signal on the specific core is running. The re |
+           | ference clock operates at a fixed frequency, irrespective of core |
+           |  freqeuncy changes due to performance state transitions           |
+--------------------------------------------------------------------------------
+0x400001ac   ix86arch::LLC_REFERENCES  | count each request originating from t |
+           | he core to reference a cache line in the last level cache. The co |
+           | unt may include speculation, but excludes cache line fills due to |
+           |  hardware prefetch                                                |
+--------------------------------------------------------------------------------
+0x400001ad   ix86arch::LLC_MISSES  | count each cache miss condition for refer |
+           | ences to the last level cache. The event count may include specul |
+           | ation, but excludes cache line fills due to hardware prefetch     |
+--------------------------------------------------------------------------------
+0x400001ae   ix86arch::BRANCH_INSTRUCTIONS_RETIRED  | count branch instruction |
+           | s at retirement. Specifically, this event counts the retirement o |
+           | f the last micro-op of a branch instruction                       |
+--------------------------------------------------------------------------------
+0x400001af   ix86arch::MISPREDICTED_BRANCH_RETIRED  | count mispredicted branc |
+           | h instructions at retirement. Specifically, this event counts at  |
+           | retirement of the last micro-op of a branch instruction in the ar |
+           | chitectural path of the execution and experienced misprediction i |
+           | n the branch prediction hardware                                  |
+--------------------------------------------------------------------------------
+0x400001b0   perf::PERF_COUNT_HW_CPU_CYCLES  | PERF_COUNT_HW_CPU_CYCLES        |
+--------------------------------------------------------------------------------
+0x400001b1   perf::PERF_COUNT_HW_INSTRUCTIONS  | PERF_COUNT_HW_INSTRUCTIONS    |
+--------------------------------------------------------------------------------
+0x400001b2   perf::PERF_COUNT_HW_CACHE_REFERENCES  | PERF_COUNT_HW_CACHE_REFER |
+           | ENCES                                                             |
+--------------------------------------------------------------------------------
+0x400001b3   perf::PERF_COUNT_HW_CACHE_MISSES  | PERF_COUNT_HW_CACHE_MISSES    |
+--------------------------------------------------------------------------------
+0x400001b4   perf::PERF_COUNT_HW_BRANCH_INSTRUCTIONS  | PERF_COUNT_HW_BRANCH_I |
+           | NSTRUCTIONS                                                       |
+--------------------------------------------------------------------------------
+0x400001b5   perf::PERF_COUNT_HW_BRANCH_MISSES  | PERF_COUNT_HW_BRANCH_MISSES  |
+--------------------------------------------------------------------------------
+0x400001b6   perf::PERF_COUNT_HW_BUS_CYCLES  | PERF_COUNT_HW_BUS_CYCLES        |
+--------------------------------------------------------------------------------
+0x400001b7   perf::PERF_COUNT_SW_CPU_CLOCK  | PERF_COUNT_SW_CPU_CLOCK          |
+--------------------------------------------------------------------------------
+0x400001b8   perf::PERF_COUNT_SW_TASK_CLOCK  | PERF_COUNT_SW_TASK_CLOCK        |
+--------------------------------------------------------------------------------
+0x400001b9   perf::PERF_COUNT_SW_PAGE_FAULTS  | PERF_COUNT_SW_PAGE_FAULTS      |
+--------------------------------------------------------------------------------
+0x400001ba   perf::PERF_COUNT_SW_CONTEXT_SWITCHES  | PERF_COUNT_SW_CONTEXT_SWI |
+           | TCHES                                                             |
+--------------------------------------------------------------------------------
+0x400001bb   perf::PERF_COUNT_SW_CPU_MIGRATIONS  | PERF_COUNT_SW_CPU_MIGRATION |
+           | S                                                                 |
+--------------------------------------------------------------------------------
+0x400001bc   perf::PERF_COUNT_SW_PAGE_FAULTS_MIN  | PERF_COUNT_SW_PAGE_FAULTS_ |
+           | MIN                                                               |
+--------------------------------------------------------------------------------
+0x400001bd   perf::PERF_COUNT_SW_PAGE_FAULTS_MAJ  | PERF_COUNT_SW_PAGE_FAULTS_ |
+           | MAJ                                                               |
+--------------------------------------------------------------------------------
+0x400001be   perf::PERF_COUNT_HW_CACHE_L1D  | L1 data cache                    |
+  400001bf   :READ  | read access                                              |
+  400001c0   :WRITE  | write access                                            |
+  400001c1   :PREFETCH  | prefetch access                                      |
+  400001c2   :ACCESS  | hit access                                             |
+  400001c3   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+0x400001c4   perf::PERF_COUNT_HW_CACHE_L1I  | L1 instruction cache             |
+  400001c5   :READ  | read access                                              |
+  400001c6   :PREFETCH  | prefetch access                                      |
+  400001c7   :ACCESS  | hit access                                             |
+  400001c8   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+0x400001c9   perf::PERF_COUNT_HW_CACHE_LL  | Last level cache                  |
+  400001ca   :READ  | read access                                              |
+  400001cb   :WRITE  | write access                                            |
+  400001cc   :PREFETCH  | prefetch access                                      |
+  400001cd   :ACCESS  | hit access                                             |
+  400001ce   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+0x400001cf   perf::PERF_COUNT_HW_CACHE_DTLB  | Data Translation Lookaside Buff |
+           | er                                                                |
+  400001d0   :READ  | read access                                              |
+  400001d1   :WRITE  | write access                                            |
+  400001d2   :PREFETCH  | prefetch access                                      |
+  400001d3   :ACCESS  | hit access                                             |
+  400001d4   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+0x400001d5   perf::PERF_COUNT_HW_CACHE_ITLB  | Instruction Translation Lookasi |
+           | de Buffer                                                         |
+  400001d6   :READ  | read access                                              |
+  400001d7   :ACCESS  | hit access                                             |
+  400001d8   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+0x400001d9   perf::PERF_COUNT_HW_CACHE_BPU  | Branch Prediction Unit           |
+  400001da   :READ  | read access                                              |
+  400001db   :ACCESS  | hit access                                             |
+  400001dc   :MISS  | miss access                                              |
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+Total events reported: 160
+native_avail.c                       PASSED

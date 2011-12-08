@@ -1,0 +1,7 @@
+# $Id: Rules.coretemp,v 1.1 2010/08/31 20:54:23 ralph Exp $
+
+COMPSRCS += components/coretemp/linux-coretemp.c 
+COMPOBJS += linux-coretemp.o
+
+linux-coretemp.o: components/coretemp/linux-coretemp.c components/coretemp/linux-coretemp.h 
+	$(CC) $(LIBCFLAGS) $(OPTFLAGS) -c components/coretemp/linux-coretemp.c -o linux-coretemp.o 
