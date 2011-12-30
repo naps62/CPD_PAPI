@@ -1,34 +1,3 @@
-\documentclass[a4paper,10pt]{report}
-\usepackage{fullpage}
-\usepackage{graphicx}
-\usepackage{epstopdf}
-\usepackage{ucs}
-\usepackage[T1]{fontenc}
-\usepackage[utf8x]{inputenc}
-\usepackage[english]{babel}
-\usepackage{indentfirst}
-
-\usepackage{amsmath}
-\usepackage[retainorgcmds]{IEEEtrantools}%	IEEEeqnarray
-
-\usepackage{multi row}%	row span in tables
-
-\usepackage{varioref}%	context sensitive references (prints page when far away)
-\usepackage{hyperref}%	hyperlinks, references with automatic descriptions
-\usepackage{hypcap}
-\usepackage{titlesec}
-
-\setcounter{secnumdepth}{5}
-\setcounter{tocdepth}{5}
-
-\renewcommand*\thesection{\arabic{section}}
-
-\begin{document}
-
-\tableofcontents
-
-\newpage
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% SECTION 1: ROOFLINE
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,15 +129,13 @@ The full characterization of the laptop is summarized in \autoref{tab:profile}
 	\end{center}
 \end{figure}
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%\include{sec1roofline}
-% SSUBSECTION 1.3. ROOFLINE MODEL
+%%% SSUBSECTION 2. ROOFLINE MODEL
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Roofline}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUSUBSBECTION 1.3.1. ROOFS
+%%% SUSUBSBECTION 2.1. ROOFS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Roofs}
 
@@ -179,7 +146,7 @@ $$ Flops/sec = min(Peak Flops/sec, Memory Bandwidth \times Op. Intensity ) $$
 The first part of the $\mathrm{min}$ function gives the CPU roof, which is equal to the CPU's peak Flop performance. The memory roof increases linearly with the Operational Intensity (as the operational intensity increases, problems become more CPU-bound and less memory-bound)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSUBSECTION 1.3.2. CEILINGS
+%%% SUBSUBSECTION 2.2. CEILINGS
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Ceilings}
 
@@ -237,122 +204,3 @@ For the memory, only one ceiling was estimated. This ceiling occurs when dual ch
 \end{figure}
 
 The main difference between the P8600 used in this article and the Opteron X4 is in the number of cores. Both processors have two SSE units, and two regular units (sharing the issue port with the SSE units) per core, with each SSE isntructions usign 128 bit registers in both processors. So each one can process 2 double precision floating points per cycle(assumind a fully pipelined architecture with a latency of one cycle per instruction). The clock frequency is roughly the same (2.4 GHz in the P8600, 2.3 GHz in the Opteron X4). The Opteron system showed here uses a dual-socket architecture, with two Opteron X4, for a total of 8 cores, four times more than the laptop architecture. This matches the expected values for the roofline model, which shows that the peak performance for the dual Opteron X4 system is around 4 times higher than the laptop.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SECTION 2: ALGORITHM ANALYSIS
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Algorithm Analysis}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSECTION 2.1: ALGORITHM
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{The N-Body Algorithm}
-
-In this report, it was required to analyse the performance of the \emph{N-Body} algorithm, which is used to simulate the interaction between a set of objects, and the interactions betweeen them. One example application of this algorithm is simulating the influence that the planet's gravitational force on the other planets in the set, and estimate it's position in the future.
-
-The formula implemented for this analysis is the following:
-
-\begin{IEEEeqnarray}{C}
-	\begin{cases}
-	{\forall}_{x \in N} \; p_{x}(t + {\Delta}t) = p_{x}(t) + v_{x}(t) + \frac{1}{2}{\Delta}t^{2}a_{x}(t) \nonumber \\
-	\\
-	\; a_{x}(t) = G \sum_{i=1}^{N} \frac{m_{i} | p_{x} - p{i} |}{| p_{x} - p_{i} |} \nonumber \\
-	\end{cases}
-\end{IEEEeqnarray}
-
-The formula states that the position of an object $x$ after ${\Delta}t$ units of time, is given by the sum between its previous position, velocity and acceleration. The acceleration is computed iteratively, based on the mass and position of all the other objects in the set. In general, the naive version of this algorithm (the one tested here) runs on $\Theta(N^{2})$. There are much better implementations of this algorithm, down to a complexity of $O(N log(N))$, however they were not the object of study in this article.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSECTION 2.1: PARTICULAR PROBLEM: SQUARE ROOT
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Particular Problem: Square root}
-
-The algorithm requires que calculation of a square root for every interaction, for a total of $N^{2}$ square root calculations for the whole algorithm. This C stantard implementation uses Newton's iterative method, which has an execution time that cannot be estimated easily. Since the focus here is on performance analysis rather that accurate results, it was decided that a different square root implementation should be used.
-
-The selected implementation was taken from a small comparison of square root implementations (see \cite{sqrt}), and it was the one on the article that provided the nearest speed and accuracy compared to the standard implementation, and also had support for double precision floats (some of the implementations didn't because they assumed a 32-bit number and relied on bit shift operations).
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSECTION 2.2: TEST CASES
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Test Cases}
-
-Six test cases were choosen, so that two cases could fit on each memory level. \autoref{tab:testcases} specifies their names and details.
-
-\begin{table}[!htp]
-	\begin{center}
-		\begin{tabular}{|l|l|l|}
-			\hline
-			\textbf{Test Name}	&	\textbf{Size (N)}		&	\textbf{Size}	\\
-			\hline
-			L1\_1				&	64				&	5 KB			\\
-			L1\_2				&	128				&	10 KB			\\
-			L2\_1				&	8192			&	0.625 MB		\\
-			L2\_2				&	16384			&	1.25 MB			\\
-			RAM\_1				&	65536			&	5 MB			\\
-			RAM\_2				&	131072			&	10 MB			\\
-			\hline
-		\end{tabular}
-	\end{center}
-	\caption{Test cases used in the analysis \label{tab:testcases}}
-\end{table}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% SUBSECTION 2.2: TEST METHODOLOGY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Test Methodology}
-
-In total, 12 Papi counters were measured. These counters are the following:
-\begin{description}
-	\item[PAPI\_TOT\_CYC] Total cycles;
-	\item[PAPI\_TOT\_INS] Total instructions
-	\item[PAPI\_LD\_INS] Load Instructions
-	\item[PAPI\_SR\_INS] Store Instructions
-	\item[PAPI\_FML\_INS] Multiply instructions
-	\item[PAPI\_FDV\_INS] Division instructions
-	\item[PAPI\_VEC\_INS] Vector Instructions
-	\item[PAPI\_FP\_OPS] Floating point operations
-	\item[PAPI\_L1\_DCA] L1 data cache accesses
-	\item[PAPI\_L1\_DCM] L1 data cache misses
-	\item[PAPI\_L2\_DCA] L2 data cache accesses
-	\item[PAPI\_L2\_DCM] L2 data cache misses
-\end{description}
-
-All counters were ran on a dedicated execution of the algorithm, to avoid conflicts between them. Also, to avoid possible problems with core affinity and thread scheduling, only one core was enabled on the laptop, and all major processes (graphical interface, network, etc) were disabled to minimize the overhead.
-For each test case, all counters were measured at least three times, and it was guaranteed to have an execution time that differed in at most 5\% between all three executions.
-
-
-\appendix
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%% BIBLIOGRAPHY
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{thebibliography}{9}
-\bibitem{roofline}
-	\texttt{\small
-	Roofline: An insightful Visual Performance Model for Floating-Point Programs and Multicore Architectures}	\\
-	\emph{Samuel Webb Williams, Andre Waterman, David A. Patterson}	\\
-	28th November 2011
-
-\bibitem{ark}
-	\texttt{\small
-	http://ark.intel.com/products/35568/Intel-Core2-Duo-Processor-P8600}	\\
-	\emph{Intel{\textregistered} Core 2 Duo{\texttrademark} P8600}	\\
-	{\copyright}Intel Corporation	\\
-	28th November 2011
-
-\bibitem{intelmanual}
-	\texttt{\small
-	Intel{\textregistered} 64 and IA-32 Architectures Software Developer Manuals}	\\
-	{\copyright}Intel Corporation	\\
-	29th November 2011
-
-\bibitem{sqrt}
-	Best Square Root Method - Algorithm - Function (Precision VS Speed)	\\
-	http://www.codeproject.com/KB/cpp/Sqrt\_Prec\_VS\_Speed.aspx	\\
-	\emph{Mahmoud Hesham El-Magdoub} \\
-	15th September 2010
-
-\end{thebibliography}
-
-\end{document}

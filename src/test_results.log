@@ -1,0 +1,42 @@
+Log of nice -n-20 ./run_tests.sh 
+Thu Dec 29 01:40:45 2011
+
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L1_1 with n= 64
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L1_2 with n= 128
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_1 with n= 8192
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named L2_2 with n= 16384
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_1 with n= 65536
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_2 with n= 131072
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_2 with n= 131072
+	0 1 2 3 4 5 6 7 8 9 10 11 
+Running test named RAM_2 with n= 131072
+	0 1 2 3 4 5 6 7 8 9 10 11 
+
+Thu Dec 29 05:20:04 2011
+----------------

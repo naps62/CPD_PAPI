@@ -6,7 +6,7 @@ INPUT=262144.in
 TEST_DIR=test_results
 
 typeset -i size_index test_index NUM_EVENTS run
-NUM_EVENTS=2
+NUM_EVENTS=12
 FLAG=0
 size_index=0
 

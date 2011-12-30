@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.10.22)  5 DEC 2011 21:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.28)  28 DEC 2011 19:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -245,11 +245,11 @@ File: ot1txr.fd 2000/12/15 v3.1
 \everyMPtoPDFconversion=\toks16
 )
 Package epstopdf Info: Source file: <roofline.eps>
-(epstopdf)                    date: 2011-12-05 21:55:28
-(epstopdf)                    size: 41051 bytes
+(epstopdf)                    date: 2011-12-28 19:34:09
+(epstopdf)                    size: 41044 bytes
 (epstopdf)             Output file: <roofline-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-12-04 00:23:03
-(epstopdf)                    size: 8785 bytes
+(epstopdf)                    date: 2011-12-28 19:33:57
+(epstopdf)                    size: 8889 bytes
 (epstopdf)             Command: <epstopdf --outfile=roofline-eps-converted-to.p
 df roofline.eps>
 (epstopdf)             \includegraphics on input line 10.
@@ -257,8 +257,8 @@ runsystem(epstopdf --outfile=roofline-eps-converted-to.pdf roofline.eps)...exec
 uted.
 
 Package epstopdf Info: Result file: <roofline-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-12-05 21:55:29
-(epstopdf)                    size: 8785 bytes.
+(epstopdf)                    date: 2011-12-28 19:34:09
+(epstopdf)                    size: 8889 bytes.
  <roofline-eps-converted-to.pdf, id=1, 361.35pt x 252.945pt>
 File: roofline-eps-converted-to.pdf Graphic file (type pdf)
 
@@ -280,7 +280,7 @@ Here is how much of TeX's memory you used:
  714 hyphenation exceptions out of 8191
  41i,5n,23p,278b,149s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on main.pdf (1 page, 7816 bytes).
+Output written on main.pdf (1 page, 7920 bytes).
 PDF statistics:
  12 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

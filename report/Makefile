@@ -1,15 +1,15 @@
-default: view_slides
+default: view
 
 all: report slides
-	
-report: main.tex roofline.eps x4_roofline.eps
+
+report: main.tex
 	pdflatex --shell-escape main.tex
 
 slides: slides.tex
 	pdflatex --shell-escape slides.tex
 
 view: report
-	xdg-open report.pdf
+	xdg-open main.pdf
 
 view_slides: slides
 	xdg-open slides.pdf

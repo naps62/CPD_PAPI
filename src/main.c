@@ -13,8 +13,8 @@ long_long event_value;			/* Stores the value of each test run */
 
 /* Array of all the events to run */
 int events[NUM_EVENTS] = {
-	PAPI_FML_INS,
-	PAPI_FDV_INS,
+	PAPI_FML_INS,	/* Total number of multiplications */
+	PAPI_FDV_INS,	/* Total number of divisions */
 	PAPI_TOT_CYC, 	/* Total number of cycles */
 	PAPI_TOT_INS,	/* Instructions completed */
 	PAPI_LD_INS,	/* number of load instructions */
@@ -64,7 +64,6 @@ void arg_read(int argc, char *argv[]) {
 
 void terminate() {
 	free(objects);
-
 }
 
 void papi_run() {
@@ -91,5 +90,4 @@ void papi_run() {
 	fprintf(stdout, "\t%llu\t", event_value);
 	fprintf(stdout, "\t%llu\n", end_time - start_time);
 	papi_safe(PAPI_remove_event(event_set, events[current_event]), ERR_PAPI_REMOVE_EVENT);
-	
 }
