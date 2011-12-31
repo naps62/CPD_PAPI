@@ -1,6 +1,6 @@
 \documentclass[a4paper,10pt]{report}
 \usepackage{fullpage}
-\usepackage{graphicx}
+\asdusepackage{graphicx}
 \usepackage{epstopdf}
 \usepackage{ucs}
 \usepackage[T1]{fontenc}

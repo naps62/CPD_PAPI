@@ -1,4 +1,5 @@
 default: view
+vim: default
 
 all: report slides
 
