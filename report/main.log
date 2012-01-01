@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.28)  31 DEC 2011 16:04
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2011.12.28)  1 JAN 2012 22:00
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -437,66 +437,105 @@ Overfull \hbox (2.22168pt too wide) in paragraph at lines 102--161
 [][] [] 
  []
 
-<images/aida64.png, id=90, 541.02126pt x 486.81876pt>
+<images/aida64.png, id=95, 541.02126pt x 486.81876pt>
 File: images/aida64.png Graphic file (type png)
  <use images/aida64.png>
 [2] [3 <./images/aida64.png (PNG copy)>] [4]
 Package epstopdf Info: Source file: <images/roofline.eps>
-(epstopdf)                    date: 2011-12-28 19:34:09
-(epstopdf)                    size: 41044 bytes
+(epstopdf)                    date: 2012-01-01 21:45:38
+(epstopdf)                    size: 45010 bytes
 (epstopdf)             Output file: <images/roofline-eps-converted-to.pdf>
-(epstopdf)                    date: 2011-12-28 23:58:17
-(epstopdf)                    size: 8889 bytes
+(epstopdf)                    date: 2012-01-01 21:46:17
+(epstopdf)                    size: 9180 bytes
 (epstopdf)             Command: <epstopdf --outfile=images/roofline-eps-convert
 ed-to.pdf images/roofline.eps>
 (epstopdf)             \includegraphics on input line 239.
 Package epstopdf Info: Output file is already uptodate.
 
-<images/roofline-eps-converted-to.pdf, id=127, 361.35pt x 252.945pt>
+<images/roofline-eps-converted-to.pdf, id=132, 361.35pt x 252.945pt>
 File: images/roofline-eps-converted-to.pdf Graphic file (type pdf)
 
 <use images/roofline-eps-converted-to.pdf>
-<images/roofline_x4.jpg, id=128, 439.6425pt x 402.50375pt>
-File: images/roofline_x4.jpg Graphic file (type jpg)
+Package epstopdf Info: Source file: <images/x4roofline.eps>
+(epstopdf)                    date: 2012-01-01 21:45:38
+(epstopdf)                    size: 51584 bytes
+(epstopdf)             Output file: <images/x4roofline-eps-converted-to.pdf>
+(epstopdf)                    date: 2012-01-01 21:46:50
+(epstopdf)                    size: 9858 bytes
+(epstopdf)             Command: <epstopdf --outfile=images/x4roofline-eps-conve
+rted-to.pdf images/x4roofline.eps>
+(epstopdf)             \includegraphics on input line 244.
+Package epstopdf Info: Output file is already uptodate.
 
-<use images/roofline_x4.jpg>
+<images/x4roofline-eps-converted-to.pdf, id=133, 361.35pt x 252.945pt>
+File: images/x4roofline-eps-converted-to.pdf Graphic file (type pdf)
+
+<use images/x4roofline-eps-converted-to.pdf>
 Overfull \hbox (18.66972pt too wide) in paragraph at lines 238--247
 [][]   [] 
  []
 
-[5 <./images/roofline-eps-converted-to.pdf> <./images/roofline_x4.jpg>]
-[6]
+[5 <./images/roofline-eps-converted-to.pdf> <./images/x4roofline-eps-converted-
+to.pdf>] [6]
+<images/chart01_mem_accesses.png, id=165, 504.88625pt x 301.125pt>
+File: images/chart01_mem_accesses.png Graphic file (type png)
 
-LaTeX Warning: Reference `tab:memAccessesResults' on page 7 undefined on input 
-line 393.
+<use images/chart01_mem_accesses.png>
+<images/chart02_mem_accesses_error.png, id=167, 461.725pt x 270.00874pt>
+File: images/chart02_mem_accesses_error.png Graphic file (type png)
 
-[7] [8]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 422.
+<use images/chart02_mem_accesses_error.png>
+Overfull \hbox (18.66972pt too wide) in paragraph at lines 396--405
+[][]   [] 
+ []
 
- (/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
+
+Overfull \hbox (12.46732pt too wide) in paragraph at lines 412--413
+[]\T1/cmr/m/n/10 Usage of both lev-els of cache was es-ti-mated with spe-cific 
+coun-ters. PAPI_L1_DCA and PAPI_L2_DCA
+ []
+
+[7] <images/chart03_cache_l1.png, id=189, 495.8525pt x 301.125pt>
+File: images/chart03_cache_l1.png Graphic file (type png)
+
+<use images/chart03_cache_l1.png>
+<images/chart04_cache_l2.png, id=190, 485.815pt x 300.12125pt>
+File: images/chart04_cache_l2.png Graphic file (type png)
+
+<use images/chart04_cache_l2.png>
+Overfull \hbox (18.66972pt too wide) in paragraph at lines 417--426
+[][]   [] 
+ []
+
+[8 <./images/chart01_mem_accesses.png> <./images/chart02_mem_accesses_error.png
+> <./images/chart03_cache_l1.png> <./images/chart04_cache_l2.png>]
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 437.
+
+
+(/usr/share/texmf-texlive/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 10000) in paragraph at lines 422--425
+Underfull \hbox (badness 10000) in paragraph at lines 437--440
 []\T1/cmtt/m/n/9 Roofline: An insightful Visual Performance Model for Floating-
 Point Programs and Multicore
  []
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 429.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 444.
 
 (/usr/share/texmf-texlive/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 429.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 444.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 429.
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 435
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 444.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 450
 .
-LaTeX Font Info:    No file OMScmtt.fd. on input line 435.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 450.
 
 
 LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead on input line 435.
+(Font)              using `OMS/cmsy/m/n' instead on input line 450.
 
 [9
 
@@ -504,15 +543,12 @@ LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 8153 strings out of 493848
- 115454 string characters out of 1152822
- 241052 words of memory out of 3000000
- 11210 multiletter control sequences out of 15000+50000
+ 8181 strings out of 493848
+ 116286 string characters out of 1152822
+ 240052 words of memory out of 3000000
+ 11230 multiletter control sequences out of 15000+50000
  19058 words of font info for 45 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  41i,12n,49p,860b,1139s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -535,9 +571,9 @@ frm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0700.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sftt0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 tt0900.pfb>
-Output written on main.pdf (9 pages, 705612 bytes).
+Output written on main.pdf (9 pages, 663509 bytes).
 PDF statistics:
- 267 PDF objects out of 1000 (max. 8388607)
- 50 named destinations out of 1000 (max. 500000)
- 136 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 295 PDF objects out of 1000 (max. 8388607)
+ 55 named destinations out of 1000 (max. 500000)
+ 164 words of extra memory for PDF output out of 10000 (max. 10000000)
 

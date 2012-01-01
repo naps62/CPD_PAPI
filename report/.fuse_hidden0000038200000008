@@ -242,7 +242,7 @@ For the memory, only one ceiling was estimated. This ceiling occurs when dual ch
 	\hspace{0.5cm}
 	\begin{minipage}[t]{0.5\linewidth}
 		\includegraphics[width=\textwidth]{images/x4roofline.eps}
-		\caption[Roofline Model with Opteron X4]{Roofline Model overlaped with Opteron X4 \label{fig:rooflinex4}}
+		\caption[Roofline Model with Opteron X4]{Roofline Model based, overlaped with Roofline Model for the Opteron X4 \label{fig:rooflinex4}}
 	\end{minipage}
 \end{figure}
 
@@ -395,12 +395,12 @@ Based on this code structure, the formulas to estimate the number of memory acce
 \begin{figure}[!htp]
 	\begin{minipage}[t]{0.5\linewidth}
 		\includegraphics[width=\textwidth]{images/chart01_mem_accesses.png}
-		\caption{Memory Accesses (log scale) \label{fig:memaccesses}}
+		\caption{Memory Accesses \label{fig:memaccesses}}
 	\end{minipage}
 	\hspace{0.5cm}
 	\begin{minipage}[t]{0.5\linewidth}
 		\includegraphics[width=\textwidth]{images/chart02_mem_accesses_error.png}
-		\caption{Estimation Error (log scale) \label{fig:memaccesseserror}}
+		\caption{Estimation Error \label{fig:memaccesseserror}}
 	\end{minipage}
 \end{figure}
 
@@ -411,25 +411,20 @@ Based on this code structure, the formulas to estimate the number of memory acce
 
 Usage of both levels of cache was estimated with specific counters. PAPI\_L1\_DCA and PAPI\_L2\_DCA provided the number of data accesses to the caches, while PAPI\_L1\_DCM and PAPI\_L2\_DCM provided number of misses. It should be noted that the counters for L2 cache are not native, and there were some problems using them, like negative values on some first tests. This might indicate that those counters are not fully reliable.
 
-The charts in this section give information about cache misses and memory accesses. \autoref{fig:cachel1} and \autoref{fig:cachel2} show the total number of accesses and misses for each cache level.
+he graphs in this section give information about cache misses and memory accesses. \autoref{fig:cachel1} and \autoref{fig:cachel2} show the total number of accesses and misses for each cache level.
 
 \begin{figure}[!htp]
 	\begin{minipage}[t]{0.5\linewidth}
-		\includegraphics[width=\textwidth]{images/chart03_cache_l1.png}
-		\caption{Cache L1 (log scale) \label{fig:cachel1}}
+		\includegraphics[width=\textwidth]{images/chart03\_cache\_l1.png}
+		\caption{Cache L1 \label{fig:cachel1}}
 	\end{minipage}
 	\hspace{0.5cm}
 	\begin{minipage}[t]{0.5\linewidth}
-		\includegraphics[width=\textwidth]{images/chart04_cache_l2.png}
-		\caption{Cache L2 (log scale) \label{fig:cachel2}}
+		\includegraphics[width=\textwidth]{images/chart04\_cache\_l2.png}
+		\caption{Cache L2 \label{fig:cachel2}}
 	\end{minipage}
 \end{figure}
 
-\begin{figure}[!htp]
-	\includegraphics[width=\textwidth]{images/chart05_cache_miss_perc}
-	\caption{Cache miss \%
-
-For both cache levels, the number of accesses increase with the test size, as expected. It can be noticed that when the problem size exceeds size of L1 cache, L1 miss rate increases significantly, and the same can be said for L2 cache when problem size exceeds it's capacity. This is expected, since if the problem can completely fit on cache, then most of the misses become compulsory misses. With an increase in size, misses will happen more often since it will be required to access higher memory levels to retrieve data that could not fit in the cache.
 
 
 
